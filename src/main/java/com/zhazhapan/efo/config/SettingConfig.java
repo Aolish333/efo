@@ -33,6 +33,7 @@ public class SettingConfig {
     static {
         if (Checker.isWindows()) {
             currentOS = OsName.WINDOWS;
+            System.setProperty("hadoop.home.dir","D:\\Program Files\\hadoop-common-2.2.0-bin-master");
         } else if (Checker.isMacOS()) {
             currentOS = OsName.MAC;
         } else {
@@ -40,6 +41,11 @@ public class SettingConfig {
         }
     }
 
+    /**
+     * 获得权限
+     * @param jsonPath
+     * @return 权限数组
+     */
     public static int[] getAuth(String jsonPath) {
         int[] auth = new int[5];
         for (int i = 0; i < ConfigConsts.AUTH_OF_SETTINGS.length; i++) {

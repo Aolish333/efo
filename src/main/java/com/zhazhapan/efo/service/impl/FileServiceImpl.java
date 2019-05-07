@@ -17,6 +17,7 @@ import com.zhazhapan.efo.service.IAuthService;
 import com.zhazhapan.efo.service.ICategoryService;
 import com.zhazhapan.efo.service.IFileService;
 import com.zhazhapan.efo.util.BeanUtils;
+import com.zhazhapan.efo.util.OperFile;
 import com.zhazhapan.efo.util.ServiceUtils;
 import com.zhazhapan.modules.constant.ValueConsts;
 import com.zhazhapan.util.*;
@@ -30,6 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.Date;
@@ -292,6 +294,13 @@ public class FileServiceImpl implements IFileService {
                     int[] auth = SettingConfig.getAuth(ConfigConsts.FILE_DEFAULT_AUTH_OF_SETTING);
                     file.setAuth(auth[0], auth[1], auth[2], auth[3], auth[4]);
                     boolean isSuccess = fileDAO.insertFile(file);
+                    try {
+                        // upload to hadoop
+                        OperFile.uploadFile(localUrl,visitUrl);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        System.out.println("hadoop server not open");
+                    }
                     if (isSuccess) {
                         long fileId = fileDAO.getIdByLocalUrl(localUrl);
                         if (fileId > 0) {
