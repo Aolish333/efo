@@ -148,7 +148,7 @@ a {
 }
 
 .jq-nav-mini.jq-nav .jq-nav-item:hover {
-    background: rgba(255, 255, 255, .1);
+    background: rgba(150, 12, 12, 0.13);
 }
 
 .jq-nav-mini.jq-nav .jq-nav-item:hover .jq-nav-item a {

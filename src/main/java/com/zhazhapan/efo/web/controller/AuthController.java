@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author pantao
- * @since 2018/3/8
+ * @author Lee
+ * @since 2019/3/8
  */
 @RestController
 @RequestMapping("/auth")

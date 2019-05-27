@@ -7,8 +7,8 @@ import java.sql.Timestamp;
 /**
  * 分类表
  *
- * @author pantao
- * @since 2018/1/11
+ * @author Lee
+ * @since 2019/1/11
  */
 public class Category {
 

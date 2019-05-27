@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.InvocationTargetException;
 
 /**
- * @author pantao
- * @since 2018/1/18
+ * @author Lee
+ * @since 2019/1/18
  */
 public class BeanUtils {
 

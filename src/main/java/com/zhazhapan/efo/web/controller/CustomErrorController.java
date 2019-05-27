@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import springfox.documentation.annotations.ApiIgnore;
 
 /**
- * @author pantao
- * @since 2018/1/22
+ * @author Lee
+ * @since 2019/1/22
  */
 @Controller
 @Api(description = "错误页面映射")

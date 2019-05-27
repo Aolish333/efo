@@ -3,8 +3,8 @@ package com.zhazhapan.efo.dao.sqlprovider;
 import org.apache.ibatis.jdbc.SQL;
 
 /**
- * @author pantao
- * @since 2018/1/19
+ * @author Lee
+ * @since 2019/1/19
  */
 public class CommonSqlProvider {
 

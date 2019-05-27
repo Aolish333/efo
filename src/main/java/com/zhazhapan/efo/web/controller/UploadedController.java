@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author pantao
- * @since 2018/2/28
+ * @author Lee
+ * @since 2019/2/28
  */
 @RestController
 @RequestMapping(value = "/uploaded")

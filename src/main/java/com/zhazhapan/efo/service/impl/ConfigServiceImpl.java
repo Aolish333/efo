@@ -7,8 +7,8 @@ import com.zhazhapan.efo.service.IConfigService;
 import org.springframework.stereotype.Service;
 
 /**
- * @author pantao
- * @since 2018/1/22
+ * @author Lee
+ * @since 2019/1/22
  */
 @Service
 public class ConfigServiceImpl implements IConfigService {

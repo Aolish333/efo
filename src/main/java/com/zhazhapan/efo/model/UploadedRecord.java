@@ -3,8 +3,8 @@ package com.zhazhapan.efo.model;
 import java.sql.Timestamp;
 
 /**
- * @author pantao
- * @since 2018/2/28
+ * @author Lee
+ * @since 2019/2/28
  */
 public class UploadedRecord {
 

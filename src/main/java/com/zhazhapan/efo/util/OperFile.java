@@ -20,7 +20,7 @@ public class OperFile {
     static Configuration conf = new Configuration();
 
     static {
-        conf.set("fs.defaultFS", "hdfs://min1:9000");
+        conf.set("fs.defaultFS", "hdfs://192.168.2.128:9000");
         conf.set("user","root");
     }
 

@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author pantao
- * @since 2018/1/30
+ * @author Lee
+ * @since 2019/1/30
  */
 @RestController
 @RequestMapping("/category")

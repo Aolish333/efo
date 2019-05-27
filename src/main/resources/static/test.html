@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div class="row" id="notice">
+    <a-top></a-top>
+</div>
+
+</body>
+<script>
+    Vue.component("a-top",{
+        template: '<h1>这是一个公告</h1>'
+    })
+    new Vue({
+        el: '#notice'
+    })
+</script>
+
+</html>

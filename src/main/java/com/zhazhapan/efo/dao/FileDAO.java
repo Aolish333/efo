@@ -11,8 +11,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author pantao
- * @since 2018/1/19
+ * @author Lee
+ * @since 2019/1/19
  */
 @Repository
 public interface FileDAO {
@@ -135,9 +135,7 @@ public interface FileDAO {
      * @return 是否添加成功
      */
     @Insert("insert into file(name,suffix,local_url,visit_url,size,description,tag,user_id,category_id," +
-            "is_downloadable,is_uploadable,is_deletable,is_updatable,is_visible) values(#{name},#{suffix}," +
-            "#{localUrl},#{visitUrl},#{size},#{description},#{tag},#{userId},#{categoryId},#{isDownloadable}," +
-            "#{isUploadable},#{isDeletable},#{isUpdatable},#{isVisible})")
+            "is_downloadable,is_uploadable,is_deletable,is_updatable,is_visible) values(#{name},#{suffix}," + "#{localUrl},#{visitUrl},#{size},#{description},#{tag},#{userId},#{categoryId},#{isDownloadable}," + "#{isUploadable},#{isDeletable},#{isUpdatable},#{isVisible})")
     boolean insertFile(File file);
 
     /**

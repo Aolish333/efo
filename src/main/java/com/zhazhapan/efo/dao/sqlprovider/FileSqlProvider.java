@@ -9,8 +9,8 @@ import org.apache.ibatis.jdbc.SQL;
 import org.springframework.stereotype.Component;
 
 /**
- * @author pantao
- * @since 2018/1/19
+ * @author Lee
+ * @since 2019/1/19
  */
 @Component
 public class FileSqlProvider {

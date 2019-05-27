@@ -5,8 +5,8 @@ import com.zhazhapan.efo.util.BeanUtils;
 import java.sql.Timestamp;
 
 /**
- * @author pantao
- * @since 2018/1/19
+ * @author Lee
+ * @since 2019/1/19
  */
 public class DownloadRecord {
 

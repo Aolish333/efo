@@ -23,8 +23,8 @@ import java.util.Map;
 /**
  * <a href="https://github.com/joni2back/angular-filemanager/blob/master/API.md">see api doc</a>
  *
- * @author pantao
- * @since 2018/1/29
+ * @author Lee
+ * @since 2019/1/29
  */
 @ApiIgnore
 @RestController

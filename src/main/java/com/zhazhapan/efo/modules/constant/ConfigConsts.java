@@ -1,8 +1,8 @@
 package com.zhazhapan.efo.modules.constant;
 
 /**
- * @author pantao
- * @since 2018/1/12
+ * @author Lee
+ * @since 2019/1/12
  */
 public class ConfigConsts {
 

@@ -22,8 +22,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * @author pantao
- * @since 2018/1/22
+ * @author Lee
+ * @since 2019/1/22
  */
 @RestController
 @RequestMapping("/config")

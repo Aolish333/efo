@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author pantao
- * @since 2018/1/29
+ * @author Lee
+ * @since 2019/1/29
  */
 public interface IFileManagerService {
 

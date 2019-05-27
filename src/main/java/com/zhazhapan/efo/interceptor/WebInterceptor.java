@@ -19,8 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author pantao
- * @since 2018/1/25
+ * @author Lee
+ * @since 2019/1/25
  */
 public class WebInterceptor implements HandlerInterceptor {
 
@@ -36,7 +36,7 @@ public class WebInterceptor implements HandlerInterceptor {
             AuthInterceptor interceptor = ((HandlerMethod) handler).getMethodAnnotation(AuthInterceptor.class);
             //注解到类上面的注解，无法直接获取，只能通过扫描
             if (Checker.isNull(interceptor)) {
-                for (Class<?> type : EfoApplication.controllers) {
+                for (Class <?> type : EfoApplication.controllers) {
                     RequestMapping mapping = type.getAnnotation(RequestMapping.class);
                     if (Checker.isNotNull(mapping)) {
                         for (String path : mapping.value()) {

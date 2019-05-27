@@ -1,7 +1,7 @@
 var app = new Vue({
     el: "#index",
     data: {
-        username: "",
+        username: getUserInfo(),
         permission: 1,
         loginTime: "",
         passwordVerify: "",
@@ -17,6 +17,15 @@ Vue.component('paging-more', {
     template: '<button class="btn btn-link btn-block btn-lg" onclick="offset += 1;getPage();"><b>获取更多</b></button><br/><br/>'
 });
 
+Vue.component("notice-top",{
+    template: '<div style="text-align: center"><h1>公告：如果发现没有对应权限，请尽快联系管理员。</h1></div>'
+})
+new Vue({
+    el: '#notice'
+})
+new Vue({
+    el: '#butt'
+})
 var userInfo = {};
 
 function getPage() {

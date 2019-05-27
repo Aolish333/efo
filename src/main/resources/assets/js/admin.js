@@ -17,7 +17,8 @@ var authFileSearch = "";
 var authSearchOffset = 0;
 
 var authModal = new Vue({
-    el: "#authAddedModal", methods: {
+    el: "#authAddedModal",
+    methods: {
         searchFileInAuth: function () {
             var file = $("#auth-file-search").val();
             if (isEmpty(file)) {

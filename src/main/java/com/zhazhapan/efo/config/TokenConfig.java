@@ -16,8 +16,8 @@ import org.slf4j.LoggerFactory;
 import java.util.Hashtable;
 
 /**
- * @author pantao
- * @since 2018/1/26
+ * @author Lee
+ * @since 2019/1/26
  */
 public class TokenConfig {
 

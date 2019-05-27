@@ -39,8 +39,8 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * @author pantao
- * @since 2018/1/29
+ * @author Lee
+ * @since 2019/1/29
  */
 @Service
 public class FileServiceImpl implements IFileService {
@@ -177,12 +177,12 @@ public class FileServiceImpl implements IFileService {
     }
 
     @Override
-    public List<FileRecord> listUserDownloaded(int userId, int offset, String search) {
+    public List <FileRecord> listUserDownloaded(int userId, int offset, String search) {
         return fileDAO.listUserDownloaded(userId, offset, search);
     }
 
     @Override
-    public List<FileRecord> listUserUploaded(int userId, int offset, String search) {
+    public List <FileRecord> listUserUploaded(int userId, int offset, String search) {
         return fileDAO.listUserUploaded(userId, offset, search);
     }
 
@@ -237,15 +237,14 @@ public class FileServiceImpl implements IFileService {
     }
 
     @Override
-    public List<FileRecord> listAll(int userId, int offset, int categoryId, String orderBy, String search) {
+    public List <FileRecord> listAll(int userId, int offset, int categoryId, String orderBy, String search) {
         return fileDAO.listAll(userId, offset, categoryId, orderBy, search);
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, timeout = 36000, rollbackFor =
             Exception.class)
-    public boolean upload(int categoryId, String tag, String description, String prefix, MultipartFile multipartFile,
-                          User user) {
+    public boolean upload(int categoryId, String tag, String description, String prefix, MultipartFile multipartFile, User user) {
         if (user.getIsUploadable() == 1) {
             String name = multipartFile.getOriginalFilename();
             String suffix = FileExecutor.getFileSuffix(name);
@@ -270,16 +269,11 @@ public class FileServiceImpl implements IFileService {
                 }
             }
             //是否可以上传
-            boolean canUpload = !multipartFile.isEmpty() && size <= maxSize && Pattern.compile(EfoApplication
-                    .settings.getStringUseEval(ConfigConsts.FILE_SUFFIX_MATCH_OF_SETTING)).matcher(suffix).matches()
-                    && (Checker.isNotExists(localUrl) || !fileExists || EfoApplication.settings.getBooleanUseEval
+            boolean canUpload = !multipartFile.isEmpty() && size <= maxSize && Pattern.compile(EfoApplication.settings.getStringUseEval(ConfigConsts.FILE_SUFFIX_MATCH_OF_SETTING)).matcher(suffix).matches() && (Checker.isNotExists(localUrl) || !fileExists || EfoApplication.settings.getBooleanUseEval
                     (ConfigConsts.FILE_COVER_OF_SETTING));
-            logger.info("is empty [" + multipartFile.isEmpty() + "], file size [" + size + "], max file size [" +
-                    maxSize + "]");
+            logger.info("is empty [" + multipartFile.isEmpty() + "], file size [" + size + "], max file size [" + maxSize + "]");
             if (canUpload) {
-                String visitUrl = getRegularVisitUrl(Checker.isNotEmpty(prefix) && user.getPermission() > 1 ? prefix
-                        : EfoApplication.settings.getStringUseEval(ConfigConsts.CUSTOM_LINK_RULE_OF_SETTING), user,
-                        name, suffix, category);
+                String visitUrl = getRegularVisitUrl(Checker.isNotEmpty(prefix) && user.getPermission() > 1 ? prefix : EfoApplication.settings.getStringUseEval(ConfigConsts.CUSTOM_LINK_RULE_OF_SETTING), user, name, suffix, category);
                 if (fileExists) {
                     removeByLocalUrl(localUrl);
                 }
@@ -289,17 +283,16 @@ public class FileServiceImpl implements IFileService {
                 try {
                     multipartFile.transferTo(new java.io.File(localUrl));
                     logger.info("local url of upload file: " + localUrl);
-                    File file = new File(name, suffix, localUrl, visitUrl, WebUtils.scriptFilter(description),
-                            WebUtils.scriptFilter(tag), user.getId(), categoryId);
+                    File file = new File(name, suffix, localUrl, visitUrl, WebUtils.scriptFilter(description), WebUtils.scriptFilter(tag), user.getId(), categoryId);
                     int[] auth = SettingConfig.getAuth(ConfigConsts.FILE_DEFAULT_AUTH_OF_SETTING);
                     file.setAuth(auth[0], auth[1], auth[2], auth[3], auth[4]);
                     boolean isSuccess = fileDAO.insertFile(file);
                     try {
                         // upload to hadoop
-                        OperFile.uploadFile(localUrl,visitUrl);
+                        OperFile.uploadFile(localUrl, visitUrl);
                     } catch (IOException e) {
                         e.printStackTrace();
-                        System.out.println("hadoop server not open");
+                        logger.info("hadoop server not open");
                     }
                     if (isSuccess) {
                         long fileId = fileDAO.getIdByLocalUrl(localUrl);
@@ -385,8 +378,8 @@ public class FileServiceImpl implements IFileService {
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<FileBasicRecord> listBasicAll(String user, String file, String category, int offset) {
-        return (List<FileBasicRecord>) ServiceUtils.invokeFileFilter(fileDAO, "listBasicBy", user, file, category,
+    public List <FileBasicRecord> listBasicAll(String user, String file, String category, int offset) {
+        return (List <FileBasicRecord>) ServiceUtils.invokeFileFilter(fileDAO, "listBasicBy", user, file, category,
                 offset);
     }
 }

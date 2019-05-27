@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import springfox.documentation.annotations.ApiIgnore;
 
 /**
- * @author pantao
- * @since 2018/1/25
+ * @author Lee
+ * @since 2019/1/25
  */
 @Controller
 @Api(description = "视图页面映射")

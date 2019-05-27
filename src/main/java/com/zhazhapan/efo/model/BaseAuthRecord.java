@@ -1,8 +1,8 @@
 package com.zhazhapan.efo.model;
 
 /**
- * @author pantao
- * @since 2018/3/6
+ * @author Lee
+ * @since 2019/3/6
  */
 public class BaseAuthRecord {
 

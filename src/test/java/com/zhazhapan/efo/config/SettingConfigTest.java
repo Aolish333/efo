@@ -8,8 +8,8 @@ import org.junit.Test;
 import java.util.regex.Pattern;
 
 /**
- * @author pantao
- * @since 2018/1/26
+ * @author Lee
+ * @since 2019/1/26
  */
 public class SettingConfigTest {
 
